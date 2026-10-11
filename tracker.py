@@ -1,7 +1,14 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Oct 11 14:07:36 2026
-
-@author: Adam
-"""
 # Charity shop stock tracker
+def load_items():
+    items = []
+    with open ("items.csv", "r") as file:
+        file.readline()
+        line = file.readline().rstrip('\n')
+        while line:
+            row = line.split(",")
+            items.append(row)
+            line = file.readline().rstrip('\n')
+        return items
+
+print (load_items())
+        
