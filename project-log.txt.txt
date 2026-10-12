@@ -5,3 +5,5 @@
 12 Oct - Wrote save_items to write the list back to items.csv. Tested with a made up item. Ran the test twice by accident so a duplicate was saved, fixed by editing the CSV file.
 
 12 Oct - Wrote add_items to ask for item details like the name and price then it gets added to items.csv. I tested this with a made up item to get added.
+
+12 Oct - Wrote list_items to print every item in the inventory with all of its corresponding details in a numbered list. The category was missing at first because I used the wrong index, fixed by changing it to [1].

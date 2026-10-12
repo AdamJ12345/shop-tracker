@@ -28,5 +28,7 @@ def add_items(inv):
     save_items(inv)
     print("Item added")
 
-inv = load_items()
-add_items(inv)
+def list_items(inv):
+    for i in range(len(inv)):
+        print(i+1, inv[i][0], inv[i][1], inv[i][2], "£" + inv[i][3], inv[i][4])
+
