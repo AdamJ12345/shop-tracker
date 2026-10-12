@@ -32,3 +32,13 @@ def list_items(inv):
     for i in range(len(inv)):
         print(i+1, inv[i][0], inv[i][1], inv[i][2], "£" + inv[i][3], inv[i][4])
 
+def mark_sold(inv):
+    list_items(inv)
+    choice = int(input("Item number to be marked as sold: "))
+    if choice >= 1 and choice <= len(inv):
+        inv[choice - 1][4] = "yes"
+        save_items(inv)
+        print("Item marked as sold")
+    else:
+        print("Invalid item number")
+        
