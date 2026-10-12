@@ -3,3 +3,5 @@
 11 Oct - Wrote the load_items function to read times.csv int a list. The header row showed up as an item at first, fixed it by reading and ignoring the first line before the loop.
 
 12 Oct - Wrote save_items to write the list back to items.csv. Tested with a made up item. Ran the test twice by accident so a duplicate was saved, fixed by editing the CSV file.
+
+12 Oct - Wrote add_items to ask for item details like the name and price then it gets added to items.csv. I tested this with a made up item to get added.

@@ -17,3 +17,16 @@ def save_items(inv):
         line = ",".join(row)
         file.write(line + "\n")
     file.close()
+
+def add_items(inv):
+    name = input("Item name: ")
+    category = input("Category: ")
+    date = input("Date donated (YYYY-MM-DD): ")
+    price = input("Price is £: ")
+    row = [name, category, date, price, "no"]
+    inv.append(row)
+    save_items(inv)
+    print("Item added")
+
+inv = load_items()
+add_items(inv)
