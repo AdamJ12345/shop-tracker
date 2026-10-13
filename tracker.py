@@ -74,19 +74,21 @@ while running:
     print("1. Add item")
     print("2. List items")
     print("3. Mark item as sold")
-    print("4. Generate report")
+    print("4. Refresh report")
     print("5. Quit")
     choice = input("Choose an option: ")
     if choice == "1":
         add_items(inv)
+        generate_report(inv)
     elif choice == "2":
         list_items(inv)
     elif choice == "3":
         mark_sold(inv)
+        generate_report(inv)
     elif choice == "4":
         generate_report(inv)
     elif choice == "5":
         running = False
         print("Goodbye")
     else:
-        print("Please choose 1, 2, 3 or 4")
+        print("Please choose 1, 2, 3, 4 or 5")
