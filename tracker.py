@@ -42,3 +42,23 @@ def mark_sold(inv):
     else:
         print("Invalid item number")
         
+inv = load_items()
+running = True
+
+while running:
+    print("1. Add item")
+    print("2. List items")
+    print("3. Mark item as sold")
+    print("4. Quit")
+    choice = input("Choose an option: ")
+    if choice == "1":
+        add_items(inv)
+    elif choice == "2":
+        list_items(inv)
+    elif choice == "3":
+        mark_sold(inv)
+    elif choice == "4":
+        running = False
+        print("Goodbye")
+    else:
+        print("Please choose 1, 2, 3 or 4")

@@ -9,3 +9,5 @@
 12 Oct - Wrote list_items to print every item in the inventory with all of its corresponding details in a numbered list. The category was missing at first because I used the wrong index, fixed by changing it to [1].
 
 12 Oct - Wrote the mark_sold so if an item is sold, you can select a specific numbered item to change to be sold, with a check for invalid numbers. Issue: typing a letter instead of a number would crash the program so this will be dealt with later.
+
+12 Oct - Wrote a menu loop with if/elif/else that calls the subprograms add_items, list_items and mark_sold, and quits on option 4. Tested every option and used invalid inputs like letters and out of range numbers to see if it could cope with unexpected inputs.
