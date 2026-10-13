@@ -13,3 +13,5 @@
 12 Oct - Wrote a menu loop with if/elif/else that calls the subprograms add_items, list_items and mark_sold, and quits on option 4. Tested every option and used invalid inputs like letters and out of range numbers to see if it could cope with unexpected inputs.
 
 13 Oct - Wrote generate_report so Python writes index.html with a table of unsold items. At first the header row was repeating in the table, fixed it by writing the item details (row[0] to row[3]) inside the loop instead.
+
+13 Oct - I added a sold items table to the report by looping through the list again with row[4] == "yes". The heading were in the wrong place, fixed them by separating them into their own tables.
