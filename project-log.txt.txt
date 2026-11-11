@@ -19,3 +19,5 @@
 13 Oct - Made the report regenerate automatically after adding or selling an item by calling generate_report from the menu. Kept option 4 as a manual refresh for when I edit items.csv by hand.
 
 11 Nov - Added a two column dashboard, with the tables on the left and placeholder boxes for charts on the right. it didn't show at first because my old version was running, fixed by replacing it and re running the program.
+
+11 Nov - Added a pie chart comparing the pound value of sold items with items still in stock. Python adds up the totals with float() and works out the sold percentage, and CSS conic-gradient draws the circle from that number.

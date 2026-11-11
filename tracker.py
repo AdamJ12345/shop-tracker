@@ -43,6 +43,18 @@ def mark_sold(inv):
         print("Invalid item number")
         
 def generate_report(inv):
+    stock_total = 0
+    sold_total = 0
+    for row in inv:
+        if row[4] == "no":
+            stock_total = stock_total + float(row[3])
+        else:
+            sold_total = sold_total + float(row[3])
+    total = stock_total + sold_total
+    if total > 0:
+        sold_percent = sold_total / total * 100
+    else:
+        sold_percent = 0
     file = open("index.html", "w")
     file.write("<!DOCTYPE html>\n")
     file.write("<html>\n")
@@ -69,7 +81,7 @@ def generate_report(inv):
     file.write("</div>\n")
 
     file.write('<div class="right">\n')
-    file.write('<div class="chart-box"><h2>Pie chart</h2><p>Coming soon</p></div>\n')
+    file.write('<div class="chart-box"><h2>Sales vs Stock</h2><div class="pie" style="background: conic-gradient(#27ae60 0% ' + str(sold_percent) + '%, #2c3e50 ' + str(sold_percent) + '% 100%);"></div><p>Total value: &pound;' + str(round(total, 2)) + '</p><p>Sold: &pound;' + str(round(sold_total, 2)) + ' | In stock: &pound;' + str(round(stock_total, 2)) + '</p></div>\n')
     file.write('<div class="chart-box"><h2>Bar graph</h2><p>Coming soon</p></div>\n')
     file.write("</div>\n")
 
