@@ -44,10 +44,14 @@ def mark_sold(inv):
         
 def generate_report(inv):
     file = open("index.html", "w")
+    file.write("<!DOCTYPE html>\n")
     file.write("<html>\n")
     file.write('<head><title>Shop Stock</title><link rel="stylesheet" href="style.css"></head>\n')
     file.write("<body>\n")
     file.write("<h1>Charity Shop Stock</h1>\n")
+    file.write('<div class="dashboard">\n')
+
+    file.write('<div class="left">\n')
     file.write("<h2>Current Inventory</h2>\n")
     file.write("<table>\n")
     file.write("<tr><th>Item</th><th>Category</th><th>Date donated</th><th>Price</th></tr>\n")
@@ -55,17 +59,24 @@ def generate_report(inv):
         if row[4] == "no":
             file.write("<tr><td>" + row[0] + "</td><td>" + row[1] + "</td><td>" + row[2] + "</td><td>&pound;" + row[3] + "</td></tr>\n")
     file.write("</table>\n")
-    file.write("<h2>Sold Items</h2>\n")
+    file.write("<h2>Sold Inventory</h2>\n")
     file.write("<table>\n")
     file.write("<tr><th>Item</th><th>Category</th><th>Date donated</th><th>Price</th></tr>\n")
     for row in inv:
         if row[4] == "yes":
             file.write("<tr><td>" + row[0] + "</td><td>" + row[1] + "</td><td>" + row[2] + "</td><td>&pound;" + row[3] + "</td></tr>\n")
     file.write("</table>\n")
+    file.write("</div>\n")
+
+    file.write('<div class="right">\n')
+    file.write('<div class="chart-box"><h2>Pie chart</h2><p>Coming soon</p></div>\n')
+    file.write('<div class="chart-box"><h2>Bar graph</h2><p>Coming soon</p></div>\n')
+    file.write("</div>\n")
+
+    file.write("</div>\n")
     file.write("</body>\n")
     file.write("</html>\n")
     file.close()
-            
         
 inv = load_items()
 running = True

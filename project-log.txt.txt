@@ -17,3 +17,5 @@
 13 Oct - I added a sold items table to the report by looping through the list again with row[4] == "yes". The heading were in the wrong place, fixed them by separating them into their own tables.
 
 13 Oct - Made the report regenerate automatically after adding or selling an item by calling generate_report from the menu. Kept option 4 as a manual refresh for when I edit items.csv by hand.
+
+11 Nov - Added a two column dashboard, with the tables on the left and placeholder boxes for charts on the right. it didn't show at first because my old version was running, fixed by replacing it and re running the program.

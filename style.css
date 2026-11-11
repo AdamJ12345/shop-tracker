@@ -19,6 +19,9 @@ table {
     border-collapse: collapse;
     background-color: white;
     margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 th {
@@ -31,4 +34,42 @@ th {
 td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) td {
+    background-color: #f9f7f3;
+}
+
+tr:hover td {
+    background-color: #e8eef3;
+}
+
+.dashboard {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.left {
+    flex: 2;
+}
+
+.right {
+    flex: 1;
+}
+
+.dashboard h2 {
+    margin: 0 0 10px 0;
+}
+
+.chart-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    min-height: 200px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
