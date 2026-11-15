@@ -22,7 +22,10 @@ def add_items(inv):
     name = input("Item name: ")
     category = input("Category: ")
     date = input("Date donated (YYYY-MM-DD): ")
-    price = input("Price is £: ")
+    price = input("Price in £: ")
+    while not price.replace(".", "", 1).isdigit():
+       print("Please enter a number, like 4.50")
+       price = input("Price in £: ")
     row = [name, category, date, price, "no"]
     inv.append(row)
     save_items(inv)
@@ -34,13 +37,17 @@ def list_items(inv):
 
 def mark_sold(inv):
     list_items(inv)
-    choice = int(input("Item number to be marked as sold: "))
-    if choice >= 1 and choice <= len(inv):
-        inv[choice - 1][4] = "yes"
-        save_items(inv)
-        print("Item marked as sold")
+    text = input("Item number to be marked as sold: ")
+    if text.isdigit():
+        choice = int(text)
+        if choice >= 1 and choice <= len(inv):
+            inv[choice - 1][4] = "yes"
+            save_items(inv)
+            print("Item marked as sold")
+        else:
+            print("Invalid item number")
     else:
-        print("Invalid item number")
+        print("Please enter a number")
         
 def generate_report(inv):
     stock_total = 0
