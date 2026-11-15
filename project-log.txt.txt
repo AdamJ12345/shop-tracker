@@ -21,3 +21,5 @@
 11 Nov - Added a two column dashboard, with the tables on the left and placeholder boxes for charts on the right. it didn't show at first because my old version was running, fixed by replacing it and re running the program.
 
 11 Nov - Added a pie chart comparing the pound value of sold items with items still in stock. Python adds up the totals with float() and works out the sold percentage, and CSS conic-gradient draws the circle from that number.
+
+15 Nov - Replaced the horizontal bars with a vertical bar graph of sold £ per category because it looks better. Column heights are each category's total as a percentage of the biggest one, drawn with CSS. Planned later: £ increments on the y-axis and aligning the inventory titles.

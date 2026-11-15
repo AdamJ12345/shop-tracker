@@ -55,6 +55,22 @@ def generate_report(inv):
         sold_percent = sold_total / total * 100
     else:
         sold_percent = 0
+    categories = []
+    category_totals = []
+    for row in inv:
+        if row[4] == "yes":
+            found = False
+            for i in range(len(categories)):
+                if categories[i] == row[1]:
+                    category_totals[i] = category_totals[i] + float(row[3])
+                    found = True
+            if not found:
+                categories.append(row[1])
+                category_totals.append(float(row[3]))
+    biggest = 0
+    for amount in category_totals:
+        if amount > biggest:
+            biggest = amount
     file = open("index.html", "w")
     file.write("<!DOCTYPE html>\n")
     file.write("<html>\n")
@@ -82,8 +98,14 @@ def generate_report(inv):
 
     file.write('<div class="right">\n')
     file.write('<div class="chart-box"><h2>Sales vs Stock</h2><div class="pie" style="background: conic-gradient(#27ae60 0% ' + str(sold_percent) + '%, #2c3e50 ' + str(sold_percent) + '% 100%);"></div><p>Total value: &pound;' + str(round(total, 2)) + '</p><p>Sold: &pound;' + str(round(sold_total, 2)) + ' | In stock: &pound;' + str(round(stock_total, 2)) + '</p></div>\n')
-    file.write('<div class="chart-box"><h2>Bar graph</h2><p>Coming soon</p></div>\n')
-    file.write("</div>\n")
+    file.write('<div class="chart-box"><h2>Sales by Category</h2>\n')
+    file.write('<div class="v-chart">\n')
+    file.write('<div class="v-axis"><span>&pound;' + str(round(biggest, 2)) + '</span><span>&pound;0</span></div>\n')
+    for i in range(len(categories)):
+        height = category_totals[i] / biggest * 100
+        file.write('<div class="v-col"><div class="v-area"><div class="v-bar" style="height: ' + str(height) + '%;"></div></div><span class="v-label">' + categories[i] + '</span><span class="v-value">&pound;' + str(round(category_totals[i], 2)) + '</span></div>\n')
+    file.write('</div>\n')
+    file.write('</div>\n')
 
     file.write("</div>\n")
     file.write("</body>\n")

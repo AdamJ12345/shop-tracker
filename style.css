@@ -79,3 +79,51 @@ tr:hover td {
     border-radius: 50%;
     margin: 20px auto;
 }
+.v-chart {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.v-axis {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 12px;
+    text-align: right;
+    padding-right: 4px;
+}
+
+.v-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.v-area {
+    height: 180px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-bottom: 2px solid #2c3e50;
+}
+
+.v-bar {
+    width: 70%;
+    background-color: #27ae60;
+    border-radius: 4px 4px 0 0;
+}
+
+.v-label {
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.v-value {
+    font-size: 13px;
+    font-weight: bold;
+}
