@@ -25,3 +25,5 @@
 15 Nov - Replaced the horizontal bars with a vertical bar graph of sold £ per category because it looks better. Column heights are each category's total as a percentage of the biggest one, drawn with CSS. Planned later: £ increments on the y-axis and aligning the inventory titles.
 
 15 Nov - Fixed crashes on bad inputs. mark_sold now reads the input as text and checks isdigit() before converting, and add_items keeps asking until the price is a valid number, because a bad price would have broken the report page.
+
+15 Nov - Added an id column to items.csv. New items get an ID one higher than the last item, so the list stays sorted by ID, ready for binary search. Put the ID at the end of each row so the existing row indexes didn't need to change.

@@ -12,7 +12,7 @@ def load_items():
 
 def save_items(inv):
     file = open("items.csv", "w")
-    file.write("item,category,date_donated,price,sold\n")
+    file.write("item,category,date_donated,price,sold,id\n")
     for row in inv:
         line = ",".join(row)
         file.write(line + "\n")
@@ -26,14 +26,18 @@ def add_items(inv):
     while not price.replace(".", "", 1).isdigit():
        print("Please enter a number, like 4.50")
        price = input("Price in £: ")
-    row = [name, category, date, price, "no"]
+    if len(inv) > 0:
+        new_id = int(inv[len(inv) - 1][5]) + 1
+    else:
+        new_id = 1001
+    row = [name, category, date, price, "no", str(new_id)]
     inv.append(row)
     save_items(inv)
-    print("Item added")
+    print("Item added. Sticker ID:", new_id)
 
 def list_items(inv):
     for i in range(len(inv)):
-        print(i+1, inv[i][0], inv[i][1], inv[i][2], "£" + inv[i][3], inv[i][4])
+        print(i + 1, inv[i][0], inv[i][1], inv[i][2], "£" + inv[i][3], inv[i][4], "ID:", inv[i][5])
 
 def mark_sold(inv):
     list_items(inv)

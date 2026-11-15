@@ -1,16 +1,16 @@
-item,category,date_donated,price,sold
-Blue jumper,Clothes,2026-10-01,4.50,no
-Harry Potter book,Books,2026-10-02,2.00,no
-Lego Set,Toys,2026-10-03,6.00,no
-Denim jacket,Clothes,2026-10-03,8.00,no
-Cookbook,Books,2026-10-04,3.00,no
-Jigsaw puzzle,Toys,2026-10-04,2.50,no
-Family comedy DVD,DVDs,2026-10-05,1.50,yes
-Ceramic mug set,Homeware,2026-10-06,3.50,no
-Wool scarf,Clothes,2026-10-07,3.00,no
-Crime novel,Books,2026-10-08,1.50,no
-Board game,Toys,2026-10-09,5.00,no
-Picture frame,Homeware,2026-10-10,2.00,no
-Nature documentary DVD,DVDs,2026-10-11,1.50,yes
-Leather belt,Clothes,2026-10-12,2.50,yes
-Table lamp,Homeware,2026-10-13,7.00,yes
+item,category,date_donated,price,sold,id
+Blue jumper,Clothes,2026-10-01,4.50,yes,1001
+Harry Potter book,Books,2026-10-02,2.00,yes,1002
+Lego Set,Toys,2026-10-03,6.00,yes,1003
+Denim jacket,Clothes,2026-10-03,8.00,no,1004
+Cookbook,Books,2026-10-04,3.00,no,1005
+Jigsaw puzzle,Toys,2026-10-04,2.50,no,1006
+Family comedy DVD,DVDs,2026-10-05,1.50,no,1007
+Ceramic mug set,Homeware,2026-10-06,3.50,yes,1008
+Wool scarf,Clothes,2026-10-07,3.00,no,1009
+Crime novel,Books,2026-10-08,1.50,no,1010
+Board game,Toys,2026-10-09,5.00,no,1011
+Picture frame,Homeware,2026-10-10,2.00,no,1012
+Nature documentary DVD,DVDs,2026-10-11,1.50,yes,1013
+Leather belt,Clothes,2026-10-12,2.50,yes,1014
+Table lamp,Homeware,2026-10-13,7.00,yes,1015
